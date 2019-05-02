@@ -23,7 +23,7 @@ def main():
     # sum(-1^i * Pascal_row_k(i) * n_i for all i <= k)
     for i in range(pyramid_size):
         coefficients = calculate_coefficients(i)
-        numbers = [((-1) ** (i-j)) * coefficients[j] * diag_number[j]
+        numbers = [((-1) ** (i-j)) * coefficients[j] * diag_number[j] for j in range(i+1)]
         next_value = sum(numbers)
         output.append(next_value)
 		
